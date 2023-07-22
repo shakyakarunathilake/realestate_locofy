@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Format code with Prettier
+npm run format
+
+# Check code formatting with Prettier
+git diff --exit-code --quiet -- '*.js' '*.jsx' || (
+    echo "\n❌ Prettier Check Failed.❌\n Please run 'npm run format', add the changes, and try committing again.👀 \n"
+    false
+)
+
+# Check ESLint Standards
+npm run check-lint || (
+    echo "\n❌ ESLint Check Failed.❌\n Make the required changes listed above, add the changes, and try committing again.👀 \n"
+    false
+)
+
+# If everything passes, we can now commit
+echo "✅ Commit Hook Passed! Committing changes now. 💪\n"

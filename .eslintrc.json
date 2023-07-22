@@ -1,0 +1,79 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              ["^react", "^@?\\w"], // Packages `react` related packages come first.
+              ["^(@|components)(/.*|$)"], // Internal packages.
+              ["^\\u0000"], // Side effect imports.
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"], // Parent imports. Put `..` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"], // Other relative imports. Put same-folder imports and `.` last.
+              ["^.+\\.?(css)$"] // Style imports.
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "simple-import-sort", "prettier"],
+  "rules": {
+    "quotes": [
+      "error",
+      "double",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ],
+    "max-len": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "no-plusplus": "off",
+    "comma-dangle": "off",
+    "prettier/prettier": "warn",
+    "react/function-component-definition": "off",
+    "no-nested-ternary": "off", // Disabled this rule because atom level components mainly use nested ternary operations
+    "default-param-last": "off", // Disabled because some of our reducers have parameters in a different order. We can re-enable this rule once we've standardized the order of parameters in all reducers.
+    "react/prop-types": "off", // if you don't use prop-types library
+    "no-console": "warn", // disallow console.logs
+    "no-param-reassign": "warn", // disallow modifying function parameters
+    "no-unused-vars": "warn", // disallow unused variables
+    "arrow-body-style": "warn", // enforce consistent arrow function bodies
+    "prefer-arrow-callback": "warn", // enforce arrow functions for callbacks
+    "import/prefer-default-export": "off", // allow named exports instead of default
+    "camelcase": "off", // We're disabling this rule since the backend response is not in camelcase
+    "no-undef": "off", // We're using a test framework that defines global functions like `describe`
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/*.test.jsx",
+          "**/*.spec.jsx",
+          "**/setupTests.js"
+        ]
+      }
+    ], // don't consider test files as extraneous dependencies
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
+}

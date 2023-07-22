@@ -1,25 +1,40 @@
 {
-    "name": "real_estate",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-			"next": "^13.2.4",
-			"react": "^18.2.0",
-			"react-dom": "^18.2.0",
-			"antd": "^4.17.4",
-			"@ant-design/icons": "^4.7.0",
-			"react-router-dom": "^6.2.1"
-    },
-    "devDependencies": {
-			"autoprefixer": "^10.4.8",
-			"postcss": "^8.4.16",
-			"tailwindcss": "^3.1.8"
-    },
-    "scripts": {
-      "dev": "next dev",
-      "build": "next build && next export -o build/",
-      "start": "next start",
-      "lint": "next lint"
-    }
+  "name": "real_estate",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.17.4",
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^7.0.4",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o build/",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "prepare": "husky install",
+    "check-lint": "eslint . --fix --ext .js,.jsx .",
+    "lint-staged": "lint-staged",
+    "test-all": "npm run check-format &&  npm run check-lint"
   }
-  
+}
