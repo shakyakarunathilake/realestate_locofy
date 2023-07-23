@@ -28,35 +28,35 @@ import {
 
 const Hero = () => {
   return (
-    <div className="self-stretch flex flex-col py-[120px] px-[30px] items-center justify-start bg-[url(/hero-section@3x.png)] bg-cover bg-no-repeat bg-[top] text-center text-33xl text-gray-white font-body-regular-400">
-      <div className="self-stretch flex flex-col items-center justify-center gap-[62px] max-w-[95%px]">
-        <div className="self-stretch flex flex-col items-center justify-start gap-[24px] md:max-w-full">
-          <div className="self-stretch relative leading-[72px] font-semibold">
+    <div className="flex flex-col items-center justify-start bg-[url(/hero-section@3x.png)] bg-cover bg-[top] bg-no-repeat px-[30px] py-[120px] text-center font-body-regular-400 text-33xl text-gray-white">
+      <div className="flex max-w-[95%px] flex-col items-center justify-center gap-[62px] self-stretch">
+        <div className="flex flex-col items-center justify-start gap-[24px] md:max-w-full">
+          <div className="relative font-semibold leading-[72px]">
             Find Your Dream Home
           </div>
-          <div className="self-stretch relative text-xl leading-[28px] font-body-regular-600 text-primary-50">
+          <div className="relative font-body-regular-600 text-xl leading-[28px] text-primary-50">
             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
             posuere cubilia curae; Proin sodales ultrices nulla blandit
             volutpat.
           </div>
         </div>
-        <div className="self-stretch flex flex-col items-center justify-start gap-[17px] text-left text-base text-primary-700 font-body-regular-600">
+        <div className="flex flex-col items-center justify-start gap-[17px] text-left font-body-regular-600 text-base text-primary-700">
           <div className="flex flex-row items-start justify-start gap-[10px]">
-            <button className="cursor-pointer [border:none] py-3 px-6 bg-primary-500 rounded overflow-hidden flex flex-row items-start justify-start">
-              <div className="relative text-base leading-[24px] font-medium font-body-regular-600 text-gray-white text-center">
+            <button className="flex cursor-pointer flex-row items-start justify-start overflow-hidden rounded bg-primary-500 px-6 py-3 [border:none]">
+              <div className="relative text-center font-body-regular-600 text-base font-medium leading-[24px] text-gray-white">
                 Rent
               </div>
             </button>
-            <button className="cursor-pointer [border:none] py-3 px-6 bg-gray-white rounded overflow-hidden flex flex-row items-start justify-start">
-              <div className="relative text-base leading-[24px] font-medium font-body-regular-600 text-primary-400 text-center">
+            <button className="flex cursor-pointer flex-row items-start justify-start overflow-hidden rounded bg-gray-white px-6 py-3 [border:none]">
+              <div className="relative text-center font-body-regular-600 text-base font-medium leading-[24px] text-primary-400">
                 Sale
               </div>
             </button>
           </div>
-          <div className="self-stretch flex flex-row flex-wrap items-start justify-center">
-            <div className="flex-1 rounded-lg bg-gray-white flex flex-row py-8 px-[62px] box-border items-center justify-between max-w-[1400px] md:w-[300px] md:flex-col md:gap-[20px] md:items-start md:justify-start md:ml-[auto] md:mr-[auto]">
-              <div className="w-[137px] flex flex-col items-start justify-start gap-[16px] text-center">
-                <div className="relative leading-[24px] capitalize font-semibold">
+          <div className="flex flex-row flex-wrap items-start justify-center self-stretch">
+            <div className="box-border flex max-w-[1400px] flex-1 flex-row items-center justify-between rounded-lg bg-gray-white px-[62px] py-8 md:ml-[auto] md:mr-[auto] md:w-[300px] md:flex-col md:items-start md:justify-start md:gap-[20px]">
+              <div className="flex w-[137px] flex-col items-start justify-start gap-[16px] text-center">
+                <div className="relative font-semibold capitalize leading-[24px]">
                   Locations
                 </div>
                 <Dropdown
@@ -82,8 +82,8 @@ const Hero = () => {
                   </a>
                 </Dropdown>
               </div>
-              <div className="w-[177px] flex flex-col items-start justify-start gap-[16px]">
-                <div className="relative leading-[24px] capitalize font-semibold flex items-end w-[150px]">
+              <div className="flex w-[177px] flex-col items-start justify-start gap-[16px]">
+                <div className="relative flex w-[150px] items-end font-semibold capitalize leading-[24px]">
                   Property Type
                 </div>
                 <Dropdown
@@ -114,8 +114,8 @@ const Hero = () => {
                   </a>
                 </Dropdown>
               </div>
-              <div className="w-[155px] flex flex-col items-start justify-start gap-[16px]">
-                <div className="relative leading-[24px] capitalize font-semibold flex items-end w-[150px]">
+              <div className="flex w-[155px] flex-col items-start justify-start gap-[16px]">
+                <div className="relative flex w-[150px] items-end font-semibold capitalize leading-[24px]">
                   Rent Range
                 </div>
                 <Dropdown
@@ -144,8 +144,8 @@ const Hero = () => {
                   </a>
                 </Dropdown>
               </div>
-              <button className="cursor-pointer [border:none] py-3 px-6 bg-primary-500 rounded w-[102px] flex flex-row box-border items-center justify-center sm:hover:bg-steelblue">
-                <div className="relative text-base leading-[24px] font-medium font-body-regular-600 text-gray-white text-center">
+              <button className="box-border flex w-[102px] cursor-pointer flex-row items-center justify-center rounded bg-primary-500 px-6 py-3 [border:none] sm:hover:bg-steelblue">
+                <div className="relative text-center font-body-regular-600 text-base font-medium leading-[24px] text-gray-white">
                   Search
                 </div>
               </button>

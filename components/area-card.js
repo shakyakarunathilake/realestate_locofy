@@ -17,13 +17,13 @@ const AreaCard = ({
 
   return (
     <Link
-      className="cursor-pointer [text-decoration:none] flex-1 rounded-lg h-[241px] flex flex-row items-start justify-start relative bg-[url(/card-1@3x.png)] bg-cover bg-no-repeat bg-[top] text-left text-5xl text-gray-white font-body-regular-600 md:flex-[unset] md:self-stretch"
+      className="relative flex h-[241px] flex-1 cursor-pointer flex-row items-start justify-start rounded-lg bg-[url(/card-1@3x.png)] bg-cover bg-[top] bg-no-repeat text-left font-body-regular-600 text-5xl text-gray-white text-decoration:none md:flex-[unset]"
       href="/"
       style={card11Style}
     >
-      <div className="my-0 mx-[!important] absolute top-[16px] left-[16px] flex flex-col items-start justify-start gap-[11px] z-[0]">
-        <div className="relative leading-[32px] font-semibold">{cityName}</div>
-        <div className="relative text-base leading-[24px] text-center">
+      <div className="absolute left-[16px] top-[16px] z-[0] mx-[!important] my-0 flex flex-col items-start justify-start gap-[11px]">
+        <div className="relative font-semibold leading-[32px]">{cityName}</div>
+        <div className="relative text-center text-base leading-[24px]">
           25 listings
         </div>
       </div>
