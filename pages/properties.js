@@ -1,9 +1,11 @@
 import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Menu } from "antd";
+import { Dropdown, Pagination } from "antd";
 import "antd/dist/antd.min.css";
 import FooterSection from "../components/footer-section";
 import Header from "../components/header";
 import PropertiesGridContainer from "../components/properties-grid-container";
+
+const defaultOrder = [];
 
 const PropertiesGridView = () => {
   return (
@@ -18,30 +20,16 @@ const PropertiesGridView = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col pt-16 pb-2 items-center justify-start gap-[95px] text-left text-base text-gray-black font-body-regular-600 lg:pl-[120px] lg:pr-[120px] lg:box-border md:pl-[60px] md:pr-[60px] md:box-border sm:pl-5 sm:pr-5 sm:box-border">
-        <div className="w-[272px] flex flex-row items-center justify-start">
-          <div className="flex flex-row items-end justify-start gap-[16px]">
+      <div className="flex flex-col pt-16 pb-2 items-center justify-start gap-[95px] text-left text-base text-gray-black font-body-regular-600 lg:pl-[120px] lg:pr-[120px]">
+        <div className="flex flex-row items-center justify-start">
+          <div className="flex flex-row flex-wrap items-end justify-start gap-[16px]">
             <div className="flex flex-row items-start justify-start gap-[8px]">
               <img className="w-6 h-6" alt="" src="/listbullets.svg" />
               <img className="w-6 h-6" alt="" src="/squaresfour.svg" />
             </div>
             <div className="leading-[24px]">Sort by:</div>
             <Dropdown
-              overlay={
-                <Menu>
-                  {[
-                    { value: "Popular properties" },
-                    { value: "Latest properties" },
-                    { value: "Recommended properties" },
-                  ].map((option, index) => (
-                    <Menu.Item key={index}>
-                      <a onClick={(e) => e.preventDefault()}>
-                        {option.value || ""}
-                      </a>
-                    </Menu.Item>
-                  ))}
-                </Menu>
-              }
+              menu={{ items: defaultOrder }}
               placement="bottomLeft"
               trigger={["hover"]}
             >
@@ -54,37 +42,7 @@ const PropertiesGridView = () => {
         </div>
         <PropertiesGridContainer />
         <div className="flex flex-row items-end justify-center gap-[8px] text-center text-primary-500">
-          <div className="rounded bg-primary-50 flex flex-row p-2.5 items-start justify-start">
-            <img className="w-6 h-6" alt="" src="/arrowleft.svg" />
-          </div>
-          <div className="rounded-10xs bg-primary-500 flex flex-col py-2.5 px-[9px] items-start justify-start text-gray-white">
-            <div className="leading-[24px] font-semibold flex items-end justify-center w-[26px]">
-              1
-            </div>
-          </div>
-          <div className="rounded-10xs bg-primary-50 flex flex-col py-2.5 px-[9px] items-start justify-start">
-            <div className="leading-[24px] font-semibold flex items-end justify-center w-[26px]">
-              2
-            </div>
-          </div>
-          <div className="rounded-10xs bg-primary-50 flex flex-col py-2.5 px-[9px] items-start justify-start">
-            <div className="leading-[24px] font-semibold flex items-end justify-center w-[26px]">
-              3
-            </div>
-          </div>
-          <div className="rounded-10xs bg-primary-50 flex flex-col py-2.5 px-[9px] items-start justify-start">
-            <div className="leading-[24px] font-semibold flex items-end justify-center w-[26px]">
-              ...
-            </div>
-          </div>
-          <div className="rounded-10xs bg-primary-50 flex flex-col py-2.5 px-[9px] items-start justify-start">
-            <div className="leading-[24px] font-semibold flex items-end justify-center w-[26px]">
-              54
-            </div>
-          </div>
-          <div className="rounded bg-primary-500 flex flex-row p-2.5 items-start justify-start">
-            <img className="w-6 h-6" alt="" src="/arrowright.svg" />
-          </div>
+          <Pagination defaultCurrent={1} total={50} />
         </div>
       </div>
       <FooterSection />
