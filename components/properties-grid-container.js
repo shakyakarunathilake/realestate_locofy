@@ -2,7 +2,7 @@ import PropertyCard from "./property-card";
 
 const PropertiesGridContainer = () => {
   return (
-    <div className="flex flex-row flex-wrap items-start justify-center text-left font-body-regular-600 text-[14.51px] text-gray-700">
+    <div className="flex flex-row flex-wrap items-start justify-center self-stretch text-left font-body-regular-600 text-[14.51px] text-gray-700">
       <div className="flex flex-1 flex-row flex-wrap items-start justify-center gap-[8px]">
         <PropertyCard
           propertyImage="/unsplashrlwe8f8anoc@2x.png"

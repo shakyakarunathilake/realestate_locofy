@@ -17,7 +17,7 @@ const AreaCard = ({
 
   return (
     <Link
-      className="relative flex h-[241px] flex-1 cursor-pointer flex-row items-start justify-start rounded-lg bg-[url(/card-1@3x.png)] bg-cover bg-[top] bg-no-repeat text-left font-body-regular-600 text-5xl text-gray-white text-decoration:none md:flex-[unset]"
+      className="relative flex h-[241px] flex-1 cursor-pointer flex-row items-start justify-start rounded-lg bg-[url(/card-1@3x.png)] bg-cover bg-[top] bg-no-repeat text-left font-body-regular-600 text-5xl text-gray-white [text-decoration:none] md:flex-[unset] md:self-stretch"
       href="/"
       style={card11Style}
     >

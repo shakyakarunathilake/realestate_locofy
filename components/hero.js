@@ -1,46 +1,22 @@
 import "antd/dist/antd.min.css";
-import { Menu, Dropdown, Button } from "antd";
-import {
-  DownOutlined,
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
-  CalendarOutlined,
-  CheckOutlined,
-  ClockCircleOutlined,
-  CloseOutlined,
-  DeleteOutlined,
-  EditOutlined,
-  ExclamationCircleOutlined,
-  HeartOutlined,
-  LeftOutlined,
-  LockOutlined,
-  MailOutlined,
-  PaperClipOutlined,
-  PhoneOutlined,
-  QuestionCircleOutlined,
-  ReloadOutlined,
-  RightOutlined,
-  SearchOutlined,
-  SendOutlined,
-  ShareAltOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { Menu, Dropdown } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-start bg-[url(/hero-section@3x.png)] bg-cover bg-[top] bg-no-repeat px-[30px] py-[120px] text-center font-body-regular-400 text-33xl text-gray-white">
+    <div className="flex flex-col items-center justify-start self-stretch bg-[url(/hero-section@3x.png)] bg-cover bg-[top] bg-no-repeat px-[30px] py-[120px] text-center font-body-regular-400 text-33xl text-gray-white">
       <div className="flex max-w-[95%px] flex-col items-center justify-center gap-[62px] self-stretch">
-        <div className="flex flex-col items-center justify-start gap-[24px] md:max-w-full">
-          <div className="relative font-semibold leading-[72px]">
+        <div className="flex flex-col items-center justify-start gap-[24px] self-stretch md:max-w-full">
+          <div className="relative self-stretch font-semibold leading-[72px]">
             Find Your Dream Home
           </div>
-          <div className="relative font-body-regular-600 text-xl leading-[28px] text-primary-50">
+          <div className="relative self-stretch font-body-regular-600 text-xl leading-[28px] text-primary-50">
             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
             posuere cubilia curae; Proin sodales ultrices nulla blandit
             volutpat.
           </div>
         </div>
-        <div className="flex flex-col items-center justify-start gap-[17px] text-left font-body-regular-600 text-base text-primary-700">
+        <div className="flex flex-col items-center justify-start gap-[17px] self-stretch text-left font-body-regular-600 text-base text-primary-700">
           <div className="flex flex-row items-start justify-start gap-[10px]">
             <button className="flex cursor-pointer flex-row items-start justify-start overflow-hidden rounded bg-primary-500 px-6 py-3 [border:none]">
               <div className="relative text-center font-body-regular-600 text-base font-medium leading-[24px] text-gray-white">

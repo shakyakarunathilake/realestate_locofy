@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const PropertyRendCard = ({ propBackgroundImage }) => {
+const PropertyRentCard = ({ propBackgroundImage }) => {
   const card12Style = useMemo(() => {
     return {
       backgroundImage: propBackgroundImage,
@@ -26,4 +26,4 @@ const PropertyRendCard = ({ propBackgroundImage }) => {
   );
 };
 
-export default PropertyRendCard;
+export default PropertyRentCard;

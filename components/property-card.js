@@ -29,21 +29,21 @@ const PropertyCard = ({
       style={card1Style}
     >
       <img
-        className="relative h-[200px] max-w-full shrink-0 overflow-hidden rounded-3xs object-cover"
+        className="relative h-[200px] max-w-full shrink-0 self-stretch overflow-hidden rounded-3xs object-cover"
         alt=""
         src={propertyImage}
       />
-      <div className="flex flex-row items-start justify-start p-2.5">
+      <div className="flex flex-row items-start justify-start self-stretch p-2.5">
         <div className="relative flex-1 font-medium leading-[20.32px]">
           92 ALLIUM PLACE, ORLANDO FL 32827
         </div>
       </div>
-      <div className="flex flex-row items-start justify-start p-2.5 text-[13.55px] text-primary-500">
+      <div className="flex flex-row items-start justify-start self-stretch p-2.5 text-[13.55px] text-primary-500">
         <div className="relative font-semibold leading-[18.98px]">
           $ 590,693
         </div>
       </div>
-      <div className="flex flex-row items-start justify-start gap-[17px] px-2.5 py-0 text-[10.84px] text-gray-500">
+      <div className="flex flex-row items-start justify-start gap-[17px] self-stretch px-2.5 py-0 text-[10.84px] text-gray-500">
         <div className="flex flex-row items-center justify-start gap-[4.35px]">
           <img className="relative h-[17.42px] w-[17.42px]" alt="" src={car} />
           <div className="relative font-medium leading-[16.27px]">4</div>
@@ -67,7 +67,7 @@ const PropertyCard = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-between text-center text-[11.61px]">
+      <div className="flex flex-row items-center justify-between self-stretch text-center text-[11.61px]">
         <div className="flex flex-row items-center justify-start gap-[5.81px]">
           <img
             className="relative h-[27.57px] w-[27.57px] rounded-[50%] object-cover"
