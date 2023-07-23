@@ -1,8 +1,13 @@
+import Link from "next/link";
+
 const Header = ({ hamburger }) => {
   return (
     <header className="sticky top-[0] z-[2] box-border flex h-[98px] w-full flex-row items-center justify-center self-stretch bg-gray-white px-20 py-[22px] text-center font-body-regular-600 text-5xl text-primary-500 [background:white] lg:box-border lg:pl-10 lg:pr-10 md:box-border md:pl-6 md:pr-6">
       <div className="flex flex-1 flex-row items-center justify-between">
-        <div className="flex flex-row items-center justify-center gap-[8px]">
+        <Link
+          href="/"
+          className="flex flex-row items-center justify-center gap-[8px]"
+        >
           <img className="relative h-11 w-11" alt="" src="/houseline.svg" />
           <div className="flex flex-col items-start justify-start">
             <div className="relative font-semibold leading-[24px]">REIS</div>
@@ -10,7 +15,7 @@ const Header = ({ hamburger }) => {
               Real State
             </div>
           </div>
-        </div>
+        </Link>
         <div className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900 sm:flex">
           <div className="flex flex-row items-start justify-start gap-[30px] lg:hidden">
             <div className="relative leading-[22px]">HOME</div>

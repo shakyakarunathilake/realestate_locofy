@@ -1,8 +1,15 @@
 import "antd/dist/antd.min.css";
 import { Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 
 const Hero = () => {
+  const router = useRouter();
+
+  const onSearchCTAClick = () => {
+    router.push("/properties");
+  };
+
   return (
     <div className="flex flex-col items-center justify-start self-stretch bg-[url(/hero-section@3x.png)] bg-cover bg-[top] bg-no-repeat px-[30px] py-[120px] text-center font-body-regular-400 text-33xl text-gray-white">
       <div className="flex max-w-[95%px] flex-col items-center justify-center gap-[62px] self-stretch">
@@ -121,7 +128,10 @@ const Hero = () => {
                 </Dropdown>
               </div>
               <button className="box-border flex w-[102px] cursor-pointer flex-row items-center justify-center rounded bg-primary-500 px-6 py-3 [border:none] sm:hover:bg-steelblue">
-                <div className="relative text-center font-body-regular-600 text-base font-medium leading-[24px] text-gray-white">
+                <div
+                  className="relative text-center font-body-regular-600 text-base font-medium leading-[24px] text-gray-white"
+                  onClick={onSearchCTAClick}
+                >
                   Search
                 </div>
               </button>

@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
 import PropertyCard from "./property-card";
+import { createClient } from "@supabase/supabase-js";
 
 const RentPropertiesContainer = () => {
+  const client = createClient(
+    process.env.NEXT_PUBLIC_URL,
+    process.env.NEXT_PUBLIC_KEY
+  );
+
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      const result = await client.from("properties").select("*");
+
+      setProperties(result.data.slice(0, 4));
+    };
+
+    fetchProperties();
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-start gap-[39px] self-stretch px-0 py-[86px] text-center font-body-regular-600 text-21xl text-primary-800">
       <div className="flex max-w-[95%px] flex-col items-center justify-start gap-[40px] self-stretch md:box-border md:pl-[60px] md:pr-[60px]">
@@ -15,62 +34,13 @@ const RentPropertiesContainer = () => {
           </div>
         </div>
         <div className="flex flex-row flex-wrap items-center justify-center gap-[32px] self-stretch px-2.5 py-0">
-          <PropertyCard
-            propertyImage="/unsplashrlwe8f8anoc7@2x.png"
-            car="/car5.svg"
-            bathtub="/bathtub5.svg"
-            arrowsOut="/arrowsout2.svg"
-            ellipse1="/ellipse-1@2x.png"
-            shareNetwork="/sharenetwork6.svg"
-            heart="/heart2.svg"
-            plus="/plus7.svg"
-            propWidth="unset"
-            propFlex="1"
-            propMinWidth="355px"
-            propMaxWidth="400px"
-          />
-          <PropertyCard
-            propertyImage="/unsplashrlwe8f8anoc8@2x.png"
-            car="/car5.svg"
-            bathtub="/bathtub5.svg"
-            arrowsOut="/arrowsout2.svg"
-            ellipse1="/ellipse-1@2x.png"
-            shareNetwork="/sharenetwork6.svg"
-            heart="/heart2.svg"
-            plus="/plus8.svg"
-            propWidth="unset"
-            propFlex="1"
-            propMinWidth="355px"
-            propMaxWidth="400px"
-          />
-          <PropertyCard
-            propertyImage="/unsplashrlwe8f8anoc9@2x.png"
-            car="/car6.svg"
-            bathtub="/bathtub.svg"
-            arrowsOut="/arrowsout3.svg"
-            ellipse1="/ellipse-1@2x.png"
-            shareNetwork="/sharenetwork7.svg"
-            heart="/heart2.svg"
-            plus="/plus3.svg"
-            propWidth="unset"
-            propFlex="1"
-            propMinWidth="355px"
-            propMaxWidth="400px"
-          />
-          <PropertyCard
-            propertyImage="/unsplashrlwe8f8anoc10@2x.png"
-            car="/car6.svg"
-            bathtub="/bathtub.svg"
-            arrowsOut="/arrowsout3.svg"
-            ellipse1="/ellipse-1@2x.png"
-            shareNetwork="/sharenetwork7.svg"
-            heart="/heart2.svg"
-            plus="/plus3.svg"
-            propWidth="unset"
-            propFlex="1"
-            propMinWidth="355px"
-            propMaxWidth="400px"
-          />
+          {properties.map((property) => (
+            <PropertyCard
+              name={property.name}
+              imgUrl={property.image}
+              price={property.price}
+            />
+          ))}
         </div>
       </div>
       <button className="flex cursor-pointer flex-row items-start justify-start rounded bg-primary-500 px-6 py-3 [border:none]">
